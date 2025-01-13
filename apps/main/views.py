@@ -60,9 +60,7 @@ class SearchInFilesView(APIView):
                     if search_string in line:
                         next_lines = lines[i+1:i+5]
                         results.append({
-                            "file": file_name,
-                            "found_line": line.strip(),
-                            "next_lines": [ln.strip() for ln in next_lines]
+                            "result": [ln.strip() for ln in next_lines]
                         })
                         break
         return results
